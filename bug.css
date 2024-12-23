@@ -1,0 +1,12 @@
+The following CSS code snippet demonstrates an uncommon error related to the `calc()` function and percentage values:
+
+```css
+.element {
+  width: calc(50% - 10px);
+  background-color: lightblue;
+}
+```
+
+This code intends to make an element's width 50% of its parent's width minus 10 pixels.  However, if the parent element doesn't have a defined width (e.g., it's using percentage width itself or `auto`), the `calc()` function might not calculate correctly, potentially leading to unexpected results or rendering issues. The `50%` part of the calculation will not be able to resolve until the parent element's width is known. 
+
+This is more subtle than typical CSS errors, and the incorrect behavior is only observed in specific contexts.
